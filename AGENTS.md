@@ -1,9 +1,6 @@
 # AGENTS.md — @hoard/rng
 
-This is the first HOARD engine package (spec:
-[docs/engine-packages.md](../../docs/engine-packages.md)). The repo-root
-[AGENTS.md](../../AGENTS.md) applies here too; this file adds the package
-boundaries.
+This is the first HOARD engine package.
 
 ## What this package is
 
@@ -34,12 +31,15 @@ From `packages/rng` (standalone):
 ```bash
 npm test          # vitest
 npm run check     # tsc --noEmit
+npm run lint      # eslint (root config; includes the package import rules)
+npm run prettier  # prettier --check (fix via prettier:format)
 npm run build     # tsc declarations + esbuild ESM bundle to dist/
 ```
 
-The root `npm test`, `npm run check` and `npm run lint` also cover this
-package (root vitest include and tsconfig include reach into
-`packages/*/src/**`). Run them before considering work done.
+The root `npm test`, `npm run check`, `npm run lint` and `npm run
+prettier` also cover this package (root vitest include and tsconfig
+include reach into `packages/*/src/**`). Run them before considering
+work done.
 
 ## Conventions
 

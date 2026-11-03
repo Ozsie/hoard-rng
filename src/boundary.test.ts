@@ -12,7 +12,7 @@ import { describe, expect, it } from 'vitest';
 const PACKAGE_ROOT = fileURLToPath(new URL('..', import.meta.url));
 
 const importPattern =
-  /(?:import|export)\s[^;]*?from\s['"]([^'"]+)['"]|import\s*\(\s*['"]([^'"]+)['"]\s*\)/g;
+  /(?:import|export)\s[^;]*?from\s['']([^'']+)['']|import\s*\(\s*['']([^'']+)['']\s*\)/g;
 
 const isInsidePackage = (importPath: string, fromFile: string): boolean => {
   if (!importPath.startsWith('.')) return false;

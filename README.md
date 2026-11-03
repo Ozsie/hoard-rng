@@ -75,3 +75,5 @@ npm run build   # declarations (tsc) + ESM bundle (esbuild) to dist/
 npm publish     # prepublishOnly runs check + build + test first
 ```
 
+Source lives at [github.com/Ozsie/drakriddarna](https://github.com/Ozsie/drakriddarna)
+in `packages/rng`.

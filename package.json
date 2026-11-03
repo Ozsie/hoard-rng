@@ -2,13 +2,7 @@
 	"name": "@hoard-engine/rng",
 	"version": "0.1.0",
 	"description": "HOARD engine: seedable RNG and dice rolls",
-	"keywords": [
-		"rng",
-		"seedable",
-		"dice",
-		"deterministic",
-		"game"
-	],
+	"keywords": ["rng", "seedable", "dice", "deterministic", "game"],
 	"type": "module",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -18,9 +12,7 @@
 			"import": "./dist/index.js"
 		}
 	},
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"sideEffects": false,
 	"engines": {
 		"node": ">=18"
@@ -29,6 +21,10 @@
 		"build": "tsc -p tsconfig.build.json && esbuild src/index.ts --bundle --format=esm --outfile=dist/index.js",
 		"test": "vitest run",
 		"check": "tsc --noEmit",
+		"lint": "eslint -c .eslintrc.cjs --ext .ts src",
+		"lint:fix": "eslint -c .eslintrc.cjs --fix --ext .ts src",
+		"prettier": "prettier --check .",
+		"prettier:format": "prettier --write .",
 		"prepublishOnly": "npm run check && npm run build && npm test"
 	},
 	"repository": {
@@ -42,6 +38,13 @@
 		"@types/node": "^22.0.0",
 		"esbuild": "^0.28.2",
 		"typescript": "^5.0.0",
-		"vitest": "^5.1.0"
+		"vitest": "^5.1.0",
+		"@typescript-eslint/eslint-plugin": "^5.45.0",
+		"@typescript-eslint/parser": "^5.45.0",
+		"eslint": "^8.49.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-prettier": "^5.0.0",
+		"eslint-plugin-svelte": "^2.30.0",
+		"prettier": "^3.0.3"
 	}
 }
