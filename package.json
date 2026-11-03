@@ -1,5 +1,5 @@
 {
-	"name": "@hoard/rng",
+	"name": "@hoard-engine/rng",
 	"version": "0.1.0",
 	"description": "HOARD engine: seedable RNG and dice rolls",
 	"keywords": [
