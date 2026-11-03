@@ -1,0 +1,47 @@
+{
+	"name": "@hoard/rng",
+	"version": "0.1.0",
+	"description": "HOARD engine: seedable RNG and dice rolls",
+	"keywords": [
+		"rng",
+		"seedable",
+		"dice",
+		"deterministic",
+		"game"
+	],
+	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"sideEffects": false,
+	"engines": {
+		"node": ">=18"
+	},
+	"scripts": {
+		"build": "tsc -p tsconfig.build.json && esbuild src/index.ts --bundle --format=esm --outfile=dist/index.js",
+		"test": "vitest run",
+		"check": "tsc --noEmit",
+		"prepublishOnly": "npm run check && npm run build && npm test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Ozsie/hoard-rng.git"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"devDependencies": {
+		"@types/node": "^22.0.0",
+		"esbuild": "^0.28.2",
+		"typescript": "^5.0.0",
+		"vitest": "^5.1.0"
+	}
+}
