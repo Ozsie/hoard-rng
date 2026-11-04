@@ -1,4 +1,4 @@
-# AGENTS.md — @hoard/rng
+# AGENTS.md — @hoard-engine/rng
 
 This is the first HOARD engine package.
 
@@ -7,9 +7,14 @@ This is the first HOARD engine package.
 - Seedable RNG + d6 success rolls, extracted from `src/core/dice.ts`.
   It is a dependency-free leaf: engine-agnostic, game-agnostic, no
   framework knowledge.
-- The game consumes it through the `@hoard/rng` alias (set in
-  `svelte.config.js`), pointing at `src/index.ts` — the game never uses
-  the built `dist/`.
+- The game consumes it as a published `@hoard-engine/rng` (`^0.1.0`)
+  npm dependency, like the other HOARD engine packages.
+- Like every HOARD engine package, it is designed to be pluggable and
+  interoperable, and as standalone as possible: individually adoptable,
+  swappable and usable without any other HOARD package, game or
+  framework. Packages compose through data — minimal shapes, callbacks,
+  plain values — never through shared state; a new dependency or a
+  sibling import here is a design regression, not an optimization.
 
 ## Hard boundaries
 
